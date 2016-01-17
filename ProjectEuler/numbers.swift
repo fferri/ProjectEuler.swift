@@ -42,8 +42,9 @@ extension UInt {
     var isPrime: Bool {
         if self < 2 {return false}
         if self % 2 == 0 {return self == 2}
+        if self % 3 == 0 {return self == 3}
         let root = UInt(sqrt(Double(self)))
-        for i in 3...root {
+        for i in 2...root {
             if self % i == 0 {return false}
         }
         return true
